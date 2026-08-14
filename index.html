@@ -1682,7 +1682,8 @@
         },
         events: {
           onReady: (e) => e.target.playVideo(),
-          onStateChange: (e) => { isMusicPlaying = (e.data === YT.PlayerState.PLAYING); }
+          onStateChange: (e) => { isMusicPlaying = (e.data === YT.PlayerState.PLAYING); },
+          onError: (e) => console.error('[music] YouTube player error code:', e.data)
         }
       });
     }
@@ -1692,8 +1693,11 @@
     // start on the first touch (which fires as soon as a visitor begins
     // swiping to scroll on mobile) or click (desktop).
     function startMusic() {
+      console.log('[music] gesture detected, ytPlayer =', !!ytPlayer, 'isMusicPlaying =', isMusicPlaying);
       if (ytPlayer && !isMusicPlaying && typeof ytPlayer.playVideo === 'function') {
         ytPlayer.playVideo();
+      } else if (!ytPlayer) {
+        console.error('[music] ytPlayer not initialized yet — IFrame API may not have loaded.');
       }
       window.removeEventListener('touchstart', startMusic);
       window.removeEventListener('click', startMusic);
