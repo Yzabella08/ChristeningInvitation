@@ -6,20 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yzabella's Christening Invitation</title>
   <meta name="description"
-    content="You are cordially invited to the Holy Baptism of Yzabella — September 5, 2026 at Saint Paul the Apostle Parish." />
+    content="You are cordially invited to the Holy Baptism of Yzabella — September 5, 2026 at Santo Domingo Church." />
 
   <!-- Open Graph / Facebook / Messenger -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Yzabella's Christening Invitation" />
   <meta property="og:description"
-    content="You are cordially invited to the Holy Baptism of Yzabella — September 5, 2026 at Saint Paul the Apostle Parish." />
+    content="You are cordially invited to the Holy Baptism of Yzabella — September 5, 2026 at Santo Domingo Church." />
   <meta property="og:image" content="yzabella.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yzabella's Christening Invitation" />
   <meta name="twitter:description"
-    content="You are cordially invited to the Holy Baptism of Yzabella — September 5, 2026 at Saint Paul the Apostle Parish." />
+    content="You are cordially invited to the Holy Baptism of Yzabella — September 5, 2026 at Santo Domingo Church." />
   <meta name="twitter:image" content="yzabella.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1290,6 +1290,45 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    /* ── SCROLL REVEAL ── */
+    [data-reveal] {
+      opacity: 0;
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-reveal="up"] {
+      transform: translateY(32px);
+    }
+
+    [data-reveal="left"] {
+      transform: translateX(-36px);
+    }
+
+    [data-reveal="right"] {
+      transform: translateX(36px);
+    }
+
+    [data-reveal="scale"] {
+      transform: scale(0.86);
+    }
+
+    [data-reveal="pop"] {
+      transform: scale(0.5) rotate(-4deg);
+    }
+
+    [data-reveal].in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 500px) {
       .body {
@@ -1325,7 +1364,6 @@
         min-height: 95px;
       }
     }
-
   </style>
 </head>
 
@@ -1455,7 +1493,7 @@
 
         <!-- Details -->
         <div class="grid">
-          <div class="dc">
+          <div class="dc" data-reveal="left">
             <span class="dc-icon">
               <svg width="34" height="34" viewBox="0 0 34 34" fill="none" style="vertical-align: middle;">
                 <rect x="3" y="6" width="28" height="24" rx="5" fill="#ffffff" stroke="#e8607a" stroke-width="2" />
@@ -1471,28 +1509,28 @@
             <p class="dc-val lg">September 5</p>
             <p class="dc-sub">2026 · Saturday</p>
           </div>
-          <div class="dc">
+          <div class="dc" data-reveal="right">
             <span class="dc-icon">🕙</span>
             <p class="dc-lbl">Time</p>
             <p class="dc-val lg">10:00 AM</p>
             <p class="dc-sub">Mass begins promptly</p>
           </div>
-          <div class="dc">
+          <div class="dc" data-reveal="left">
             <span class="dc-icon">⛪</span>
             <p class="dc-lbl">Church</p>
-            <p class="dc-val">Saint Paul the Apostle Parish</p>
+            <p class="dc-val">Santo Domingo Church</p>
             <p class="dc-sub">Holy Baptism · 10:00 AM</p>
-            <a href="https://maps.app.goo.gl/uCEXKWVtfBrk53sM9" target="_blank" rel="noopener"
+            <a href="https://maps.app.goo.gl/Tk95sUfY1PYk8Cdx5" target="_blank" rel="noopener"
               class="map-btn church-btn" aria-label="Open church location in Google Maps">
               <span class="map-pin">📍</span> View on Maps
             </a>
           </div>
-          <div class="dc">
+          <div class="dc" data-reveal="right">
             <span class="dc-icon">🍽️</span>
             <p class="dc-lbl">Reception</p>
-            <p class="dc-val">Racks</p>
+            <p class="dc-val">Sitio Verde Restaurant</p>
             <p class="dc-sub">Celebration to follow</p>
-            <a href="https://maps.app.goo.gl/PxvniLd2pyidhfe66" target="_blank" rel="noopener" class="map-btn venue-btn"
+            <a href="https://maps.app.goo.gl/pfJbt4TrTaXZnemDA" target="_blank" rel="noopener" class="map-btn venue-btn"
               aria-label="Open reception venue in Google Maps">
               <span class="map-pin">📍</span> View on Maps
             </a>
@@ -1511,13 +1549,13 @@
         <!-- ✨ JOURNEY ANIMATION ✨ -->
         <div class="journey-section" aria-label="Journey from church to reception venue">
           <p class="journey-label">✦ The Celebration Journey ✦</p>
-          <div class="journey-card">
+          <div class="journey-card" data-reveal="scale">
 
             <!-- Venue labels top -->
             <div class="venue-stops">
               <!-- Church stop -->
-              <div class="stop">
-                <a href="https://maps.app.goo.gl/uCEXKWVtfBrk53sM9" target="_blank" rel="noopener" class="stop-link"
+              <div class="stop" data-reveal="left">
+                <a href="https://maps.app.goo.gl/Tk95sUfY1PYk8Cdx5" target="_blank" rel="noopener" class="stop-link"
                   aria-label="Open church in Google Maps">
                   <div class="stop-icon-wrap church">
                     <!-- Church SVG -->
@@ -1539,7 +1577,7 @@
                       <rect x="9" y="29" width="16" height="2" rx="0.5" fill="rgba(200,64,95,0.5)" />
                     </svg>
                   </div>
-                  <p class="stop-name">Saint Paul the<br />Apostle Parish</p>
+                  <p class="stop-name">Santo Domingo<br />Church</p>
                   <span class="stop-tag ceremony">Ceremony</span>
                   <span class="stop-map-hint">📍 open maps</span>
                 </a>
@@ -1549,9 +1587,9 @@
               <div style="flex:0;padding-top:18px;color:var(--gold-lt);font-size:1.1rem;opacity:0.6;">›</div>
 
               <!-- Restaurant stop -->
-              <div class="stop">
-                <a href="https://maps.app.goo.gl/PxvniLd2pyidhfe66" target="_blank" rel="noopener"
-                  class="stop-link hotel-link" aria-label="Open Racks in Google Maps">
+              <div class="stop" data-reveal="right">
+                <a href="https://maps.app.goo.gl/pfJbt4TrTaXZnemDA" target="_blank" rel="noopener"
+                  class="stop-link hotel-link" aria-label="Open Sitio Verde Restaurant in Google Maps">
                   <div class="stop-icon-wrap hotel">
                     <!-- Restaurant SVG -->
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
@@ -1577,7 +1615,7 @@
                       <line x1="18" y1="20" x2="18" y2="32" stroke="rgba(201,162,39,0.5)" stroke-width="0.8" />
                     </svg>
                   </div>
-                  <p class="stop-name">Racks</p>
+                  <p class="stop-name">Sitio Verde<br />Restaurant</p>
                   <span class="stop-tag reception">Reception</span>
                   <span class="stop-map-hint">📍 open maps</span>
                 </a>
@@ -1702,7 +1740,7 @@
             </p>
           </div>
           <!-- Scripture -->
-          <blockquote class="verse">
+          <blockquote class="verse" data-reveal="up">
             "Let the little children come to me, and do not hinder them,<br />
             for the kingdom of heaven belongs to such as these."
             <span class="verse-ref">— Matthew 19:14</span>
@@ -1722,13 +1760,13 @@
         <div class="dress-section" aria-label="Suggested dress code">
           <p class="journey-label">✦ Dress Code ✦</p>
           <div class="dress-grid">
-            <div class="dress-card dc-godparents">
+            <div class="dress-card dc-godparents" data-reveal="left">
               <span class="dress-ribbon"></span>
               <span class="dress-icon">🤍</span>
               <p class="dress-role">Godparents</p>
               <p class="dress-note">We encourage you to please wear white</p>
             </div>
-            <div class="dress-card dc-guests">
+            <div class="dress-card dc-guests" data-reveal="right">
               <span class="dress-ribbon"></span>
               <span class="dress-icon">💗</span>
               <p class="dress-role">Guests</p>
@@ -1739,7 +1777,7 @@
       </section>
 
       <!-- Footer -->
-      <footer class="ftr">
+      <footer class="ftr" data-reveal="pop">
         <p class="ftr-flowers" aria-hidden="true">🌸 💛 🌷 💛 🌸</p>
         <p class="ftr-name">Yzabella E. Decena</p>
         <p class="ftr-date">September 5 &middot; 2026</p>
@@ -1779,13 +1817,19 @@
     }, 1100);
 
     // ── Scroll-reveal ───────────────────────────────────────
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; obs.unobserve(en.target); } });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.dc,.verse,.dress-card').forEach(el => {
-      el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .8s ease, transform .8s ease';
-      obs.observe(el);
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    revealEls.forEach((el, i) => {
+      el.style.transitionDelay = ((i % 4) * 0.09) + 's';
     });
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('in-view');
+          revealObs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
 
     // ── Background Music (YouTube, auto-plays on access) ─────
     const YT_VIDEO_ID = 'yEmvQKkuLL0';
